@@ -13,13 +13,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
 import { DialogService } from './services/dialog.service';
+import { DataService } from './services/data.service';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { DialogService } from './services/dialog.service';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, DialogService],
+  providers: [AuthService, DialogService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

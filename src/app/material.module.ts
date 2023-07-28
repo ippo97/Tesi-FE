@@ -11,6 +11,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker'; // Importa MatDatepickerModule
+import { MatNativeDateModule } from '@angular/material/core'; // Importa MatNativeDateModule
+
 @NgModule({
   imports: [
     MatButtonModule,
@@ -24,8 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSnackBarModule,
     MatDialogModule,
     NoopAnimationsModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    
   ],
   exports: [
     MatButtonModule,
@@ -37,7 +40,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSidenavModule,
     MatListModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
   ]
 })
 export class MaterialModule { }
