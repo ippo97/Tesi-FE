@@ -1,53 +1,52 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.scss']
+  styleUrls: ['./statistics.component.scss'],
 })
 export class StatisticsComponent implements OnInit {
-  selectedDate!: Date;
-  chartData: any[] = [];
-
-  constructor(private dataService: DataService) {}
-
-  ngOnInit(): void {}
-
-  loadChartData(): void {
-    if (this.selectedDate) {
-      const day = this.formatDate(this.selectedDate);
-
-      this.dataService.getDataForDay(day).subscribe(
-        (data) => {
-          this.chartData = data.map((item) => {
-            return {
-              plantName: item.plantName,
-              type: item.type,
-              value: item.value
-            };
-          });
-          this.displayChart();
+  constructor() {
+    var myChart = new Chart('myChart', {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [
+          {
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
         },
-        (error) => {
-          console.error('Error retrieving data:', error);
-        }
-      );
-    }
+      },
+    });
   }
 
-  displayChart(): void {
-    // Code to display the chart using Chart.js
-  }
-
-  private formatDate(date: Date): string {
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    return `${year}-${this.padNumber(month)}-${this.padNumber(day)}`;
-  }
-
-  private padNumber(num: number): string {
-    return num.toString().padStart(2, '0');
+  ngOnInit() {
+   
   }
 }

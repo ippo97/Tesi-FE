@@ -18,8 +18,7 @@ export class LoginComponent {
             private dialogService : DialogService,
             private router: Router,
             )
-    {
-    }
+    {}
 
   login() {
     this.authService.login(this.email, this.password)

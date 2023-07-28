@@ -30,7 +30,6 @@ import { StatisticsComponent } from './statistics/statistics.component';
     MaterialModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule,
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],

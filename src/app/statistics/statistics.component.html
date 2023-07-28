@@ -1,16 +1,3 @@
-<div>
-  <h2>Statistiche per il giorno:</h2>
-  <mat-form-field>
-    <input
-      matInput
-      [matDatepicker]="picker"
-      placeholder="Seleziona una data"
-      [(ngModel)]="selectedDate"
-    />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="loadChartData()">Conferma</button>
-  
-  <canvas id="myChart" width="400" height="200"></canvas>
+<div id="divChart">
+  <canvas id="myChart"></canvas>
 </div>
