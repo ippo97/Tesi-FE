@@ -1,0 +1,22 @@
+<div style="padding: 20px;  height: 100%">
+  <mat-card
+    style="display: flex; flex-direction: column; margin: 100px auto; max-width: 400px"
+  >
+    <mat-form-field appearance="outline">
+      <mat-icon matSuffix>account_circle</mat-icon>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Insert Email" id="email" name="email" [(ngModel)]="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-icon matSuffix>password</mat-icon>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Password" id="password" name="password" [(ngModel)]="password" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="login()">
+      Login
+    </button>
+
+  </mat-card>
+</div>

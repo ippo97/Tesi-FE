@@ -1,0 +1,17 @@
+/* Aggiungo spazio tra le input */
+.form-field {
+  margin-bottom: 20px;
+}
+
+/* Centro il form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centro il pulsante */
+.buttons {
+  display: flex;
+  justify-content: center;
+}

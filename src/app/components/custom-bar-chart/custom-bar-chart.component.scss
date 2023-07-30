@@ -1,0 +1,32 @@
+// Stile per la chart-container
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+// Imposta altezza massima e proprietà di overflow per la chart-container
+// In questo esempio, l'altezza massima è impostata al 90% dell'altezza della finestra
+// Puoi regolare il valore per ottenere la visualizzazione desiderata
+.chart-container {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+// Stile per il grafico
+.chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 150px;
+}
+
+// Imposta le dimensioni del grafico per adattarsi alla finestra
+// In questo esempio, il grafico è impostato per avere una larghezza del 100% e un'altezza del 100% della finestra
+// Puoi regolare il valore per ottenere la visualizzazione desiderata
+#MyChart {
+  width: 90%;
+  height: 100%;
+}

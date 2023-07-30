@@ -1,0 +1,41 @@
+<div class="chart-container">
+  <mat-radio-group [(ngModel)]="selectedOption" (change)="onOptionChange()">
+    <mat-radio-button value="daily">Dati giornalieri</mat-radio-button>
+    <mat-radio-button value="range">Dati per un range</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field class="date-picker" *ngIf="selectedOption === 'range'">
+    <mat-label>Seleziona data di inizio</mat-label>
+    <input matInput [matDatepicker]="startDatePicker" [(ngModel)]="startDate" />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="startDatePicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #startDatePicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="date-picker" *ngIf="selectedOption === 'range'">
+    <mat-label>Seleziona data di fine</mat-label>
+    <input matInput [matDatepicker]="endDatePicker" [(ngModel)]="endDate" />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="endDatePicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #endDatePicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="date-picker" *ngIf="selectedOption === 'daily'">
+    <mat-label>Seleziona una data</mat-label>
+    <input matInput [matDatepicker]="datePicker" [(ngModel)]="selectedDate" />
+    <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="getDataAndUpdateChart()">
+    Aggiorna Grafico
+  </button>
+</div>
+
+<div class="chart">
+  <canvas id="MyChart"></canvas>
+</div>

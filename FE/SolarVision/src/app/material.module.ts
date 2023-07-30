@@ -11,13 +11,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDatepickerModule } from '@angular/material/datepicker'; // Importa MatDatepickerModule
-import { MatNativeDateModule } from '@angular/material/core'; // Importa MatNativeDateModule
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatTableModule } from '@angular/material/table';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -31,7 +24,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSnackBarModule,
     MatDialogModule,
     NoopAnimationsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
+
   ],
   exports: [
     MatButtonModule,
@@ -43,18 +37,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSidenavModule,
     MatListModule,
     MatSnackBarModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatTabsModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTableModule,
-    MatCheckboxModule
-  ],
+    MatDialogModule
+  ]
 })
-export class MaterialModule {}
+export class MaterialModule { }

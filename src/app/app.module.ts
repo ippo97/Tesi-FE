@@ -1,28 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
-import { DialogService } from './services/dialog.service';
 import { DataService } from './services/data.service';
-import { StatisticsComponent } from './statistics/statistics.component';
-
+import { CustomBarChartComponent } from './components/custom-bar-chart/custom-bar-chart.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { SidebarComponent } from './components/sidenav/sidenav.component';
+import { AuthGuard } from 'src/app/guard/auth.guard';
+import { UserService } from './services/user.service';
+import { UserManagementComponent } from './components/user-management/user-management.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { DialogComponent } from './components/dialog/dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ErrorDialogComponent,
-    StatisticsComponent
+    DialogComponent,
+    CustomBarChartComponent,
+    UserManagementComponent,
+    SidebarComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +36,11 @@ import { StatisticsComponent } from './statistics/statistics.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+
   ],
-  providers: [AuthService, DialogService, DataService],
-  bootstrap: [AppComponent]
+  providers: [AuthService, DataService, AuthGuard,UserService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

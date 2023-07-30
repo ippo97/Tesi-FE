@@ -1,0 +1,35 @@
+// Stile per le icone e il testo del link
+mat-icon, .link-text {
+  vertical-align: middle; // Centra verticalmente l'icona e il testo
+}
+
+// Stile per i link nella sidenav
+mat-nav-list a {
+  display: flex; // Utilizza il layout flessibile per allineare l'icona e il testo
+  align-items: center; // Centra verticalmente gli elementi all'interno del link
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+// Stile per il pulsante di logout
+.logout-button-container {
+  margin-top: auto; // Sposta il pulsante in fondo alla sidenav
+}
+// Stile per il contenitore principale
+mat-sidenav-content {
+  width: 100vw; // Imposta la larghezza del contenitore al 100% della larghezza della finestra
+  height: 100vh; // Imposta l'altezza del contenitore al 100% dell'altezza della finestra
+  margin: 0 auto; // Centra il contenitore orizzontalmente nella finestra
+  margin-right: 20px; // Aggiunge un margine di 20px a destra della pagina
+  overflow: auto; // Aggiunge una barra di scorrimento quando il contenuto supera le dimensioni del contenitore
+}
+
+// Stile per il pulsante di logout
+.logout-button-container {
+  position: absolute;
+  bottom: 20px; // Personalizza il posizionamento verticale del pulsante
+  left: 50%; // Centra orizzontalmente il pulsante
+  transform: translateX(-50%); // Centra il pulsante rispetto al contenitore
+}
