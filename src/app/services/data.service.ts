@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GroupedArduinoDetection } from '../models/GroupedArduinoDetection';
 import { DailyArduinoDetection } from '../models/DailyArduinoDetection';
+import { ArduinoDetection } from '../models/ArduinoDetection';
 
 @Injectable({
   providedIn: 'root',
@@ -31,5 +32,14 @@ export class DataService {
       : undefined;
     const url = `${this.baseUrl}/detection/findAllByRange/${start}/${end}`;
     return this.http.get<GroupedArduinoDetection[]>(url, { headers });
+  }
+
+  getLastDetection(): Observable<ArduinoDetection> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+    return this.http.get<ArduinoDetection>(
+      `${this.baseUrl}/detection/lastdetection`,
+      { headers: headers }
+    );
   }
 }
