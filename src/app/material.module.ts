@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   imports: [
     MatButtonModule,
@@ -31,7 +32,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSnackBarModule,
     MatDialogModule,
     NoopAnimationsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +55,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatButtonModule,
     MatIconModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule
+   
   ],
 })
 export class MaterialModule {}

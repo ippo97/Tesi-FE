@@ -18,6 +18,7 @@ import { UserManagementComponent } from './components/user-management/user-manag
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     CustomBarChartComponent,
     UserManagementComponent,
     SidebarComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DetailedInfoComponent
   ],
   imports: [
     BrowserModule,
