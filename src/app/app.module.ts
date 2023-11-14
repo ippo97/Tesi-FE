@@ -19,6 +19,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { DetailedInfoComponent } from './components/detailed-info/detailed-info.
     UserManagementComponent,
     SidebarComponent,
     UserProfileComponent,
-    DetailedInfoComponent
+    DetailedInfoComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

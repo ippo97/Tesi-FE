@@ -1,7 +1,6 @@
 <!-- user-management.component.html -->
 
 <mat-table [dataSource]="users" class="mat-elevation-z8">
-
   <!-- ID Column -->
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
@@ -13,7 +12,12 @@
     <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
     <mat-cell *matCellDef="let user" [ngSwitch]="selectedUser === user">
       <ng-container *ngSwitchCase="true">
-        <input matInput [(ngModel)]="user.name" (keyup.enter)="updateUser(selectedUser)" (blur)="updateUser(selectedUser)">
+        <input
+          matInput
+          [(ngModel)]="user.name"
+          (keyup.enter)="updateUser(selectedUser)"
+          (blur)="updateUser(selectedUser)"
+        />
       </ng-container>
       <ng-container *ngSwitchDefault>{{ user.name }}</ng-container>
     </mat-cell>
@@ -24,7 +28,12 @@
     <mat-header-cell *matHeaderCellDef>Surname</mat-header-cell>
     <mat-cell *matCellDef="let user" [ngSwitch]="selectedUser === user">
       <ng-container *ngSwitchCase="true">
-        <input matInput [(ngModel)]="user.surname" (keyup.enter)="updateUser(selectedUser)" (blur)="updateUser(selectedUser)">
+        <input
+          matInput
+          [(ngModel)]="user.surname"
+          (keyup.enter)="updateUser(selectedUser)"
+          (blur)="updateUser(selectedUser)"
+        />
       </ng-container>
       <ng-container *ngSwitchDefault>{{ user.surname }}</ng-container>
     </mat-cell>
@@ -35,7 +44,12 @@
     <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
     <mat-cell *matCellDef="let user" [ngSwitch]="selectedUser === user">
       <ng-container *ngSwitchCase="true">
-        <input matInput [(ngModel)]="user.email" (keyup.enter)="updateUser(selectedUser)" (blur)="updateUser(selectedUser)">
+        <input
+          matInput
+          [(ngModel)]="user.email"
+          (keyup.enter)="updateUser(selectedUser)"
+          (blur)="updateUser(selectedUser)"
+        />
       </ng-container>
       <ng-container *ngSwitchDefault>{{ user.email }}</ng-container>
     </mat-cell>
@@ -46,9 +60,14 @@
     <mat-header-cell *matHeaderCellDef>Email Notification</mat-header-cell>
     <mat-cell *matCellDef="let user">
       <ng-container *ngIf="selectedUser === user">
-        <mat-checkbox [(ngModel)]="user.emailNotification" (change)="updateUser(user)"></mat-checkbox>
+        <mat-checkbox
+          [(ngModel)]="user.emailNotification"
+          (change)="updateUser(user)"
+        ></mat-checkbox>
       </ng-container>
-      <ng-container *ngIf="selectedUser !== user">{{ user.emailNotification ? 'Yes' : 'No' }}</ng-container>
+      <ng-container *ngIf="selectedUser !== user">{{
+        user.emailNotification ? "Yes" : "No"
+      }}</ng-container>
     </mat-cell>
   </ng-container>
 
@@ -65,7 +84,7 @@
         </button>
       </ng-container>
       <ng-container *ngSwitchDefault>
-        <button mat-icon-button (click)="selectUser(user)">
+        <button mat-icon-button (click)="editUser(user)">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button (click)="deleteUser(user.id)">
@@ -79,3 +98,6 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>
+<div fxLayout="row" fxLayoutAlign="end center">
+  <button mat-raised-button color="primary" routerLink="/user/add">Bottone</button>
+</div>

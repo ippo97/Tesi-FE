@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 
@@ -13,7 +14,7 @@ export class UserManagementComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'surname', 'email', 'emailNotification', 'actions'];
   userId = Number(localStorage.getItem('userId'));
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -27,6 +28,11 @@ export class UserManagementComponent implements OnInit {
 
   selectUser(user: User | null): void {
     this.selectedUser = user ? { ...user } : null;
+  }
+
+  editUser(user: User | null): void {
+    let url = "/user/"+user?.id
+    this.router.navigate([url]);
   }
 
   createUser(newUser: User): void {

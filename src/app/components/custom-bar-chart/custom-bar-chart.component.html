@@ -1,9 +1,9 @@
-<mat-grid-list cols="2" rowHeight="150px">
+<mat-grid-list cols="2" rowHeight="2:1">
   <mat-grid-tile>
     <app-detailed-info></app-detailed-info>
   </mat-grid-tile>
-  <mat-grid-tile
-    ><div class="chart-container">
+  <mat-grid-tile>
+    <div class="chart-container">
       <mat-radio-group [(ngModel)]="selectedOption" (change)="onOptionChange()">
         <mat-radio-button value="daily">Dati giornalieri</mat-radio-button>
         <mat-radio-button value="range">Dati per un range</mat-radio-button>
@@ -40,6 +40,7 @@
           [matDatepicker]="datePicker"
           [(ngModel)]="selectedDate"
         />
+        <mat-hint> GG/MM/AAAA </mat-hint>
         <mat-datepicker-toggle
           matSuffix
           [for]="datePicker"

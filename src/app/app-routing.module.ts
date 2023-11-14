@@ -6,6 +6,7 @@ import { SidebarComponent } from './components/sidenav/sidenav.component';
 import { AuthGuard } from 'src/app/guard/auth.guard';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'account', component: UserProfileComponent },
       { path: 'users', component: UserManagementComponent },
+      { path: 'user/add', component: UserEditComponent },
+      { path: 'user/:id', component: UserEditComponent },
     ],
   },
   { path: 'login', component: LoginComponent },

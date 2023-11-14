@@ -1,0 +1,46 @@
+<h2>Profilo personale</h2>
+<mat-card *ngIf="user">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+    <div class="form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="name" required />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Cognome</mat-label>
+        <input
+          matInput
+          placeholder="Cognome"
+          formControlName="surname"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" required />
+      </mat-form-field>
+    </div>
+    <div class="form-field">
+      <mat-checkbox
+        formControlName="emailNotification"
+        id="emailNotification"
+      >
+        Notifiche via email
+      </mat-checkbox>
+    </div>
+    <div class="buttons">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="!profileForm.valid || !profileForm.dirty"
+      >
+        Salva modifiche
+      </button>
+    </div>
+  </form>
+</mat-card>
